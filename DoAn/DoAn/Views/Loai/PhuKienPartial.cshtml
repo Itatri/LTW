@@ -1,0 +1,9 @@
+﻿
+@model IEnumerable<DoAn.Models.Loai>
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:white;"><a href="#" style="text-transform:uppercase; text-decoration:none;color:black; font-weight:bold;">Phụ Kiện</a></li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item"><a href="/Loai/SPTheoLoai?maLoai=@item.MaLoai" style="text-transform:uppercase; text-decoration:none;">@item.TenLoai</a></li>
+    }
+</ul>

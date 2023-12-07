@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "SPTheoLoai";
+    Layout = "~/Views/Shared/UserLayoutTest.cshtml";
+}
+@model IEnumerable<DoAn.Models.SanPham>
+<p><h2 style="text-align: center;">SẢN PHẨM THEO LOẠI</h2></p>
+<p><h2 style="color: red;text-align:center;">@ViewBag.SPNULl</h2></p>
+<div class="row ">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-4">
+                <img src="@Url.Content("~/Images/"+item.Anh)" width="70%" height="70%" alt="Image">
+                    <p>
+                        <strong title="@item.TenSP">Tên SP: @item.TenSP</strong>
+                        <a href="@Url.Action("XemChiTiet","SanPham", new { @ms=item.MaSP})">Xem chi tiết</a>
+                    </p>
+            </div>
+        }
+    }
+</div>
+

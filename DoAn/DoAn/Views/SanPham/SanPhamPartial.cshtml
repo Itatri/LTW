@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "SanPhamPartial";
+    Layout = "~/Views/Shared/UserLayoutTest.cshtml";
+}
+@using DoAn.Models;
+@model List<SanPham>
+
+<h2></h2>
+<div class="row ">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-4">
+                <img src="@Url.Content("~/Images/"+item.Anh)" width="70%" height="70%" alt="Image">
+                    <p>
+                        <strong title="@item.TenSP">Tên SP: @item.TenSP</strong>
+                        <a href="@Url.Action("XemChiTiet","SanPham", new { @ms=item.MaSP})">Xem chi tiết</a>
+                    </p>
+            </div>
+        }
+    }
+</div>
+
+
